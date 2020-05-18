@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="05fc7f89-cbd1-4ed4-990c-2866ee655dbc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/script.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/home.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/views/home.handlebars" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/layouts/main.handlebars" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +41,11 @@
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/views" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/spotify-visualizer-frontend/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
@@ -60,7 +67,9 @@
       <option name="presentableId" value="Default" />
       <updated>1589648975526</updated>
       <workItem from="1589648976902" duration="716000" />
-      <workItem from="1589723767683" duration="1118000" />
+      <workItem from="1589723767683" duration="1739000" />
+      <workItem from="1589809414258" duration="604000" />
+      <workItem from="1589818405040" duration="3334000" />
     </task>
     <servers />
   </component>
@@ -68,6 +77,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="613" y="309" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589821866302">
+      <screen x="0" y="23" width="1680" height="956" />
+    </state>
+    <state x="613" y="309" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1680.956@0.23.1680.956" timestamp="1589821866302" />
     <state x="693" y="215" key="FileDocumentManager.FileCacheConflict" timestamp="1589737925476">
       <screen x="0" y="23" width="1680" height="954" />
     </state>
