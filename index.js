@@ -2,7 +2,6 @@ require('dotenv').config();
 const path = require('path');
 const fs = require('fs');
 const request = require('request');
-const querystring = require('querystring');
 const cookieParser = require('cookie-parser');
 
 const express = require('express');
@@ -15,8 +14,21 @@ const port = process.env.PORT || 8080;
 const redirect_uri = 'http://localhost:8080/callback';
 
 
+app.get('/', function (req, res) {
+    const refresh_token = req.cookies['refresh_token'] || null;
+    if (!refresh_token) {
+        console.log("here 1")
+        res.redirect('http://localhost:8080/login');
+        return
+    } else {
+        console.log(refresh_token)
+    }
+    res.sendFile(path.join(__dirname + '/views/' + 'home.html'));
+
+});
+
+
 app.get('/login', function(req, res) {
-    res.statusCode = 302;
     var scopes = 'user-read-currently-playing';
     res.redirect('https://accounts.spotify.com/authorize' +
         '?response_type=code' +
@@ -27,15 +39,11 @@ app.get('/login', function(req, res) {
 
 app.get('/callback', function (req, res) {
     const code = req.query.code || null;
-    const storedCode = req.cookies['auth_token'] || null;
 
     if (code === null) {
         res.statusCode(403);
         res.sendFile(path.join(__dirname + '/views/' + 'access_denied.html'));
-    }
-    if (storedCode !== null) {
-        res.statusCode(302);
-        res.redirect('http://localhost:8080/')
+        return
     }
 
     const authOptions = {
@@ -56,18 +64,13 @@ app.get('/callback', function (req, res) {
 
             const access_token = body.access_token;
             const refresh_token = body.refresh_token;
-
+            console.log("here 2")
+            const cookieOptions = {expires: new Date(253402300000000)};
+            res.cookie('refresh_token', refresh_token, cookieOptions);
+            res.redirect('http://localhost:8080/');
             console.log('access_token: ' ,access_token, 'refresh_token: ', refresh_token)
-        } else {
-            res.redirect('/#' +
-                querystring.stringify({
-                    error: 'invalid_token'
-                }))
         }
     });
-
-    res.statusCode = 302;
-    res.redirect('http://localhost:8080/')
 
 });
 
@@ -96,24 +99,5 @@ app.get('/refresh_token', function(req, res) {
     });
 });
 
-app.get('/', function (req, res) {
-
-    res.sendFile(path.join(__dirname + '/views/' + 'home.html'));
-    res.statusCode = 200;
-
-});
-
-app.get('/clear', function (req, res) {
-
-    // TODO: REMEMBER, clearcookie will only clear the cookie
-    // TODO: if i put in the exact same options when i was
-    // TODO: setting the cookie, including options etc
-    // TODO: take a look again here: https://expressjs.com/en/4x/api.html#res.clearCookie
-    res.clearCookie('auth_token');
-    res.clearCookie('refresh_token');
-    res.statusCode = 302;
-    res.redirect('http://localhost:8080/login')
-
-});
 
 app.listen(port);

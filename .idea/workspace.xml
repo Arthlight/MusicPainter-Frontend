@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="05fc7f89-cbd1-4ed4-990c-2866ee655dbc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/helper.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/views/home.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +70,9 @@
       <workItem from="1590078199019" duration="34000" />
       <workItem from="1590078236329" duration="4795000" />
       <workItem from="1590162355577" duration="3015000" />
-      <workItem from="1590241859254" duration="3504000" />
+      <workItem from="1590241859254" duration="3704000" />
+      <workItem from="1590326639418" duration="1022000" />
+      <workItem from="1590328455138" duration="2589000" />
     </task>
     <servers />
   </component>
@@ -86,6 +84,10 @@
       <screen x="0" y="23" width="1680" height="956" />
     </state>
     <state x="613" y="309" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1680.956@0.23.1680.956" timestamp="1589821866302" />
+    <state x="578" y="263" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1590328818857">
+      <screen x="0" y="23" width="1680" height="954" />
+    </state>
+    <state x="578" y="263" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.23.1680.954@0.23.1680.954" timestamp="1590328818857" />
     <state x="693" y="215" key="FileDocumentManager.FileCacheConflict" timestamp="1589737925476">
       <screen x="0" y="23" width="1680" height="954" />
     </state>
