@@ -17,7 +17,6 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -73,11 +72,13 @@
       <workItem from="1590241859254" duration="3704000" />
       <workItem from="1590326639418" duration="1022000" />
       <workItem from="1590328455138" duration="2589000" />
+      <workItem from="1590339856821" duration="28000" />
+      <workItem from="1590420765502" duration="972000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
     <state x="613" y="309" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589821866302">
