@@ -19,8 +19,8 @@ app.get('/', function (req, res) {
     if (!refresh_token) {
         res.redirect('http://localhost:8080/login');
     } else {
-        request.post('http://localhost:7777', {json: {refreshToken: refresh_token}}, function(error, response, body) {
-            // console.log(response.statusCode);
+        request.post('http://localhost:4000/v1/refreshToken', {json: {refreshToken: refresh_token}}, function(error, response, body) {
+            console.log(response.statusCode);
         });
         res.sendFile(path.join(__dirname + '/views/' + 'home.html'));
     }
@@ -28,7 +28,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/login', function(req, res) {
-    var scopes = 'user-read-currently-playing';
+    const scopes = 'user-read-currently-playing';
     res.redirect('https://accounts.spotify.com/authorize' +
         '?response_type=code' +
         '&client_id=' + process.env.CLIENT_ID +
