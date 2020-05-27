@@ -20,7 +20,9 @@ app.get('/', function (req, res) {
         res.redirect('http://localhost:8080/login');
     } else {
         request.post('http://localhost:4000/v1/refreshToken', {json: {refreshToken: refresh_token}}, function(error, response, body) {
-            console.log(response.statusCode);
+            if (response !== undefined) {
+                console.log(response.statusCode);
+            }
         });
         res.sendFile(path.join(__dirname + '/views/' + 'home.html'));
     }

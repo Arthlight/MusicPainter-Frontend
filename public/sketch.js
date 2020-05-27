@@ -5,7 +5,7 @@ function setup() {
 var currentX = 200;
 var currentY = 50;
 function draw() {
-    background(0);
+    background(255, 255, 255);
     currentX = currentX - 5;
     if (currentX <= 40){
         currentX= width - 40;
