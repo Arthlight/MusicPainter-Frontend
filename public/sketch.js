@@ -1,14 +1,15 @@
 function setup() {
-    createCanvas(windowWidth, windowHeight);
+    createCanvas(windowWidth, windowHeight - 60);
 }
 
 var currentX = 200;
 var currentY = 50;
+
 function draw() {
-    background(255, 255, 255);
-    currentX = currentX - 5;
-    if (currentX <= 40){
-        currentX= width - 40;
+    if (mouseIsPressed) {
+        fill(0);
+    } else {
+        fill(255);
     }
-    ellipse(currentX, currentY, 80, 80)
+    ellipse(mouseX, mouseY, 80, 80);
 }
