@@ -6,6 +6,10 @@ function setup() {
 
 var loaded = false
 
+cookie = getCookieValue('refresh_token')
+console.log(cookie)
+console.log(window.innerHeight - 60, window.innerWidth)
+
 function isLoaded() {
     // Hier kommt evtl dann ein socket channel etc rein der darauf listened ob der user musik hoert
 }
@@ -17,7 +21,7 @@ function draw() {
         background(230);
         textSize(40);
         fill(0, 102, 153);
-        text("\t\t\t\t Song not loaded （◞‸◟）\n You need to listen to a jam on Spotify.\n Show me your favourite music! ꈍ .̮ ꈍ", 850, 380)
+        text("\t\t\t\t Song not loaded （◞‸◟）\n You need to listen to a jam on Spotify.\n Show me your favourite music! ꈍ .̮ ꈍ", 840, 380)
     }
 
 }
@@ -32,4 +36,9 @@ function drawMusic() {
     while (loaded) {
         noStroke()
     }
+}
+
+function getCookieValue(a) {
+    const b = document.cookie.match('(^|;)\\s*' + a + '\\s*=\\s*([^;]+)');
+    return b ? b.pop() : '';
 }
