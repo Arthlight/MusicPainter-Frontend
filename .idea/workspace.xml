@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="05fc7f89-cbd1-4ed4-990c-2866ee655dbc" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/sketch.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/sketch.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,6 +33,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -82,7 +82,18 @@
       <workItem from="1590673775910" duration="4492000" />
       <workItem from="1590761352203" duration="3451000" />
       <workItem from="1590843181006" duration="655000" />
-      <workItem from="1590932791732" duration="1253000" />
+      <workItem from="1590932791732" duration="1367000" />
+      <workItem from="1591027514854" duration="763000" />
+      <workItem from="1591111607732" duration="753000" />
+      <workItem from="1591118148007" duration="84000" />
+      <workItem from="1591118241416" duration="148000" />
+      <workItem from="1591118409524" duration="15000" />
+      <workItem from="1591195023633" duration="297000" />
+      <workItem from="1591364783504" duration="497000" />
+      <workItem from="1591456021749" duration="336000" />
+      <workItem from="1591797102294" duration="149000" />
+      <workItem from="1592143460201" duration="678000" />
+      <workItem from="1592227623684" duration="2458000" />
     </task>
     <servers />
   </component>
@@ -90,6 +101,10 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="723" y="372" key="#Notifications" timestamp="1591118132044">
+      <screen x="0" y="23" width="1680" height="956" />
+    </state>
+    <state x="723" y="372" key="#Notifications/0.23.1680.956@0.23.1680.956" timestamp="1591118132044" />
     <state x="613" y="309" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1589821866302">
       <screen x="0" y="23" width="1680" height="956" />
     </state>
@@ -102,9 +117,17 @@
       <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state x="693" y="215" key="FileDocumentManager.FileCacheConflict/0.23.1680.954@0.23.1680.954" timestamp="1589737925476" />
+    <state x="300" y="137" key="SettingsEditor" timestamp="1591118423114">
+      <screen x="0" y="23" width="1680" height="956" />
+    </state>
+    <state x="300" y="137" key="SettingsEditor/0.23.1680.956@0.23.1680.956" timestamp="1591118423114" />
     <state width="600" height="424" key="javadoc.popup" timestamp="1590080961549">
       <screen x="0" y="23" width="1680" height="954" />
     </state>
     <state width="600" height="424" key="javadoc.popup/0.23.1680.954@0.23.1680.954" timestamp="1590080961549" />
+    <state x="925" y="233" width="670" height="676" key="search.everywhere.popup" timestamp="1592228103071">
+      <screen x="0" y="23" width="1680" height="956" />
+    </state>
+    <state x="925" y="233" width="670" height="676" key="search.everywhere.popup/0.23.1680.956@0.23.1680.956" timestamp="1592228103071" />
   </component>
 </project>

@@ -4,11 +4,49 @@ function setup() {
     textAlign(CENTER, CENTER);
 }
 
-var loaded = false
+let loaded = false
 
-cookie = getCookieValue('refresh_token')
+const cookie = getCookieValue('refresh_token')
+const maxY = window.innerHeight
+const maxX = window.innerWidth
 console.log(cookie)
-console.log(window.innerHeight - 60, window.innerWidth)
+console.log(maxX, maxY)
+
+function WsClient(url) {
+    this.ws = new WebSocket(url);
+    this.eventListener = {};
+
+    this.on = (eventName, cb) => this.eventListener[input] = cb
+
+    this.emit = (name, content) => {
+        let event = {
+            name: name,
+            content: content,
+        };
+        let rawData = JSON.stringify(event)
+        this.ws.send(rawData)
+    };
+
+    this.ws.onmessage = (response) => {
+        try {
+            let data = JSON.parse(response.data)
+            if (data) {
+                let cb = this.eventListener[data.event];
+                if (cb) {
+                    cb(data.data);
+                }
+            }
+        } catch (e) {
+            console.log(e);
+        }
+    }
+}
+const ws = new WsClient('ws://localhost:4000/v1/ws')
+
+ws.emit('refresh_token', {x: maxX, y: maxY, refresh_token: cookie})
+
+
+
 
 function isLoaded() {
     // Hier kommt evtl dann ein socket channel etc rein der darauf listened ob der user musik hoert
