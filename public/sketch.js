@@ -9,14 +9,17 @@ let loaded = false
 const cookie = getCookieValue('refresh_token')
 const maxY = window.innerHeight
 const maxX = window.innerWidth
-console.log(cookie)
-console.log(maxX, maxY)
 
 function WsClient(url) {
     this.ws = new WebSocket(url);
     this.eventListener = {};
 
-    this.on = (eventName, cb) => this.eventListener[input] = cb
+    this.on = (eventName, cb) => this.eventListener[eventName] = cb
+
+    this.ws.onopen = function (event) {
+        console.log("Successfully established connection with the backend!")
+    }
+
 
     this.emit = (name, content) => {
         let event = {
@@ -42,8 +45,6 @@ function WsClient(url) {
     }
 }
 const ws = new WsClient('ws://localhost:4000/v1/ws')
-
-ws.emit('refresh_token', {x: maxX, y: maxY, refresh_token: cookie})
 
 
 
