@@ -4,11 +4,11 @@ function setup() {
     textAlign(CENTER, CENTER);
 }
 
-let loaded = false
+let loaded = false;
 
-const cookie = getCookieValue('refresh_token')
-const maxY = window.innerHeight
-const maxX = window.innerWidth
+const cookie = getCookieValue('refresh_token');
+const maxY = window.innerHeight;
+const maxX = window.innerWidth;
 
 function WsClient(url) {
     this.ws = new WebSocket(url);
@@ -16,23 +16,18 @@ function WsClient(url) {
 
     this.on = (eventName, cb) => this.eventListener[eventName] = cb
 
-    this.ws.onopen = function (event) {
-        console.log("Successfully established connection with the backend!")
-    }
-
-
     this.emit = (name, content) => {
         let event = {
             name: name,
             content: content,
         };
-        let rawData = JSON.stringify(event)
-        this.ws.send(rawData)
+        let rawData = JSON.stringify(event);
+        this.ws.send(rawData);
     };
 
     this.ws.onmessage = (response) => {
         try {
-            let data = JSON.parse(response.data)
+            let data = JSON.parse(response.data);
             if (data) {
                 let cb = this.eventListener[data.event];
                 if (cb) {
@@ -44,10 +39,10 @@ function WsClient(url) {
         }
     }
 }
-const ws = new WsClient('ws://localhost:4000/v1/ws')
-
-
-
+const ws = new WsClient('ws://localhost:4000/v1/ws');
+function init() {
+    ws.emit('refresh_token', {x: maxX, y: maxY, refresh_token: cookie})
+};
 
 function isLoaded() {
     // Hier kommt evtl dann ein socket channel etc rein der darauf listened ob der user musik hoert
@@ -55,7 +50,7 @@ function isLoaded() {
 
 function draw() {
     if (loaded) {
-        drawMusic()
+        drawMusic();
     } else {
         background(230);
         textSize(40);
@@ -73,7 +68,7 @@ function drawData() {
 }
 function drawMusic() {
     while (loaded) {
-        noStroke()
+        noStroke();
     }
 }
 
