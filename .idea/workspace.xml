@@ -23,6 +23,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="ignore_missing_gitignore" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="12.12.0" />
@@ -96,7 +97,8 @@
       <workItem from="1592143460201" duration="678000" />
       <workItem from="1592227623684" duration="2482000" />
       <workItem from="1592398473053" duration="3865000" />
-      <workItem from="1592485958218" duration="2960000" />
+      <workItem from="1592485958218" duration="3156000" />
+      <workItem from="1592570575135" duration="2997000" />
     </task>
     <servers />
   </component>

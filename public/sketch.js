@@ -26,12 +26,13 @@ function WsClient(url) {
     };
 
     this.ws.onmessage = (response) => {
+        console.log('received a message')
         try {
             let data = JSON.parse(response.data);
             if (data) {
                 let cb = this.eventListener[data.event];
                 if (cb) {
-                    cb(data.data);
+                    cb(data.content);
                 }
             }
         } catch (e) {
@@ -40,9 +41,13 @@ function WsClient(url) {
     }
 }
 const ws = new WsClient('ws://localhost:4000/v1/ws');
-function init() {
+ws.on("isPlaying", (data) => {
+    console.log("Data is: ", data)
+})
+
+function connect() {
     ws.emit('refresh_token', {x: maxX, y: maxY, refresh_token: cookie})
-};
+}
 
 function isLoaded() {
     // Hier kommt evtl dann ein socket channel etc rein der darauf listened ob der user musik hoert
