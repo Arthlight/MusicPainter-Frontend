@@ -25,12 +25,21 @@ function WsClient(url) {
         this.ws.send(rawData);
     };
 
+    this.ws.addEventListener('open', () => {
+        console.log("Succesfully connected to Backend!")
+    });
+
+    this.ws.addEventListener('message', msg => {
+        if (msg[0] in this.eventListener) {
+            this.eventListener[msg[0]](msg[1])
+        }
+    });
+
     this.ws.onmessage = (response) => {
-        console.log('received a message')
         try {
             let data = JSON.parse(response.data);
             if (data) {
-                let cb = this.eventListener[data.event];
+                let cb = this.eventListener[data.name];
                 if (cb) {
                     cb(data.content);
                 }
@@ -38,6 +47,7 @@ function WsClient(url) {
         } catch (e) {
             console.log(e);
         }
+        console.log('received a message')
     }
 }
 const ws = new WsClient('ws://localhost:4000/v1/ws');
