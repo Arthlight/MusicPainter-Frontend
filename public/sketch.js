@@ -52,38 +52,37 @@ function WsClient(url) {
 }
 const ws = new WsClient('ws://localhost:4000/v1/ws');
 ws.on("isPlaying", (data) => {
-    console.log("Data is: ", data)
+    console.log("Data from isPlaying event is: ", data)
+    loaded = data["isPlaying"]
+    console.log("loaded is: ", loaded)
 })
 
 function connect() {
     ws.emit('refresh_token', {x: maxX, y: maxY, refresh_token: cookie})
 }
 
-function isLoaded() {
-    // Hier kommt evtl dann ein socket channel etc rein der darauf listened ob der user musik hoert
-}
-
+let counter = 0
 function draw() {
     if (loaded) {
-        drawMusic();
+        // noStroke();
+        if (counter === 0) {
+            clear()
+            counter += 1
+        }
+        console.log("runs in if", "counter: ", counter)
+        if (mouseIsPressed) {
+            fill(0);
+        } else {
+            fill(255);
+        }
+        ellipse(mouseX, mouseY, 80, 80);
     } else {
+        counter = 0
+        console.log("runs in else", "counter: ", counter)
         background(230);
         textSize(40);
         fill(0, 102, 153);
         text("\t\t\t\t Song not loaded （◞‸◟）\n You need to listen to a jam on Spotify.\n Show me your favourite music! ꈍ .̮ ꈍ", 840, 380)
-    }
-
-}
-// TODO: Eine function die eventuell mit der socket umgesetzt wird und auf ein event hoert dass mitteilt
-// TODO: ob der user bereits einen song spielt oder nicht, falls ja wird loaded zu true gesetzt, falls nein passiert nix
-// TODO: und loaded bleibt false.
-
-function drawData() {
-    // Hier kommt evtl eine socket connection rein die die nächsten daten zum drawen gesendet bekommt
-}
-function drawMusic() {
-    while (loaded) {
-        noStroke();
     }
 }
 
