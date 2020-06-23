@@ -1,10 +1,14 @@
 function setup() {
     createCanvas(windowWidth, windowHeight - 60);
-    frameRate(60);
+    frameRate(30);
     textAlign(CENTER, CENTER);
 }
 
 let loaded = false;
+let queue = [];
+let currentEllipseHeight = 0
+let currentEllipseWidth = 0
+let currentRGB = [0, 0, 0]
 
 const cookie = getCookieValue('refresh_token');
 const maxY = window.innerHeight;
@@ -56,6 +60,19 @@ ws.on("isPlaying", (data) => {
     loaded = data["isPlaying"]
     console.log("loaded is: ", loaded)
 })
+ws.on("coordinates", (data) => {
+    console.log("Data from coordinates event is: ", data)
+    queue.push([data.x, data.y])
+    currentEllipseHeight = data.ellipse_height
+    currentEllipseWidth = data.ellipse_width
+    currentRGB = data.color_palette
+    updateSongName(data.song_name)
+})
+
+function updateSongName(songname) {
+    // TODO: implement this
+    console.log("")
+}
 
 function connect() {
     ws.emit('refresh_token', {x: maxX, y: maxY, refresh_token: cookie})
@@ -64,25 +81,24 @@ function connect() {
 let counter = 0
 function draw() {
     if (loaded) {
-        // noStroke();
         if (counter === 0) {
             clear()
             counter += 1
         }
-        console.log("runs in if", "counter: ", counter)
-        if (mouseIsPressed) {
-            fill(0);
-        } else {
-            fill(255);
+        currentCoordinates = queue.shift()
+        if (currentCoordinates !== undefined) {
+            noStroke();
+            fill(currentRGB['Red'], currentRGB['Green'], currentRGB['Blue']);
+            ellipse(currentCoordinates[0], currentCoordinates[1], currentEllipseWidth, currentEllipseHeight)
         }
-        ellipse(mouseX, mouseY, 80, 80);
     } else {
-        counter = 0
-        console.log("runs in else", "counter: ", counter)
-        background(230);
-        textSize(40);
-        fill(0, 102, 153);
-        text("\t\t\t\t Song not loaded （◞‸◟）\n You need to listen to a jam on Spotify.\n Show me your favourite music! ꈍ .̮ ꈍ", 840, 380)
+        if (counter !== 1) {
+            counter = 0
+            background(230);
+            textSize(40);
+            fill(0, 102, 153);
+            text("\t\t\t\t Song not loaded （◞‸◟）\n You need to listen to a jam on Spotify.\n Show me your favourite music! ꈍ .̮ ꈍ", 840, 380)
+        }
     }
 }
 
