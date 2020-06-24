@@ -77,6 +77,11 @@ function updateSongName(songname) {
 function connect() {
     ws.emit('refresh_token', {x: maxX, y: maxY, refresh_token: cookie})
 }
+function init() {
+    const button = document.getElementById('startButton')
+    button.style.display = 'none';
+    ws.emit('refresh_token', {x: maxX, y: maxY, refresh_token: cookie})
+}
 
 let counter = 0
 function draw() {
@@ -97,7 +102,7 @@ function draw() {
             background(230);
             textSize(40);
             fill(0, 102, 153);
-            text("\t\t\t\t Song not loaded （◞‸◟）\n You need to listen to a jam on Spotify.\n Show me your favourite music! ꈍ .̮ ꈍ", 840, 380)
+            text("Show me the music you love and start your favourite playlist on Spotify!\n As soon as you are ready, press start and let the magic happen ꈍ .̮ ꈍ", 840, 380)
         }
     }
 }
