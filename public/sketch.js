@@ -14,6 +14,7 @@ const cookie = getCookieValue('refresh_token');
 const maxY = window.innerHeight;
 const maxX = window.innerWidth;
 
+
 function WsClient(url) {
     this.ws = new WebSocket(url);
     this.eventListener = {};
@@ -96,6 +97,7 @@ function draw() {
             fill(currentRGB['Red'], currentRGB['Green'], currentRGB['Blue']);
             ellipse(currentCoordinates[0], currentCoordinates[1], currentEllipseWidth, currentEllipseHeight)
         }
+
     } else {
         if (counter !== 1) {
             counter = 0
