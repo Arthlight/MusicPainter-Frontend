@@ -1,6 +1,6 @@
 function setup() {
     createCanvas(windowWidth, windowHeight - 60);
-    frameRate(30);
+    frameRate(6);
     textAlign(CENTER, CENTER);
 }
 
@@ -73,6 +73,10 @@ ws.on("coordinates", (data) => {
 function updateSongName(songname) {
     // TODO: implement this
     console.log("")
+}
+
+function download() {
+    save('myBeautifulPainting.jpg')
 }
 
 function connect() {

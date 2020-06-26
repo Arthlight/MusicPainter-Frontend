@@ -1,4 +1,8 @@
-.btn-outline-light {
-    margin-left: 550px;
+#startButton {
+    margin-right: 190px;
+    line-height: 20px;
+}
+
+#downloadButton {
     line-height: 20px;
 }
