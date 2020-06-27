@@ -70,13 +70,17 @@ ws.on("coordinates", (data) => {
     updateSongName(data.song_name)
 })
 
-function updateSongName(songname) {
-    // TODO: implement this
-    console.log("")
+function updateSongName(songName) {
+    // const button = document.getElementById("startButton")
+    // const paragraph = document.createElement("p")
+    const div = document.getElementById("startButtonDiv")
+
+    div.innerHTML = `<p style="color:white; margin-right: 170px; padding-top: 5px; font-size: 20px">${songName}</p>`
+
 }
 
 function download() {
-    save('myBeautifulPainting.jpg')
+    saveCanvas('myBeautifulPainting', 'png');
 }
 
 function connect() {
