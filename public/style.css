@@ -6,3 +6,11 @@
 #downloadButton {
     line-height: 20px;
 }
+
+#songName {
+    color: white;
+    font-size: 20px;
+    position: relative;
+    top: 8px;
+    right: 90px;
+}

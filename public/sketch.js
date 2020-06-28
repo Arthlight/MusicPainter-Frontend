@@ -1,6 +1,6 @@
 function setup() {
     createCanvas(windowWidth, windowHeight - 60);
-    frameRate(6);
+    frameRate(8);
     textAlign(CENTER, CENTER);
 }
 
@@ -74,8 +74,7 @@ function updateSongName(songName) {
     // const button = document.getElementById("startButton")
     // const paragraph = document.createElement("p")
     const div = document.getElementById("startButtonDiv")
-
-    div.innerHTML = `<p style="color:white; margin-right: 170px; padding-top: 5px; font-size: 20px">${songName}</p>`
+    div.innerHTML = `<p id="songName">${songName}</p>`
 
 }
 
@@ -83,9 +82,7 @@ function download() {
     saveCanvas('myBeautifulPainting', 'png');
 }
 
-function connect() {
-    ws.emit('refresh_token', {x: maxX, y: maxY, refresh_token: cookie})
-}
+
 function init() {
     const button = document.getElementById('startButton')
     button.style.display = 'none';
