@@ -1,6 +1,5 @@
 require('dotenv').config();
 const path = require('path');
-const fs = require('fs');
 const request = require('request');
 const cookieParser = require('cookie-parser');
 
@@ -69,30 +68,5 @@ app.get('/callback', function (req, res) {
     });
 });
 
-// TODO: still under construction, not used yet
-app.get('/refresh_token', function(req, res) {
-
-
-    const refresh_token = req.query.refresh_token;
-    const authOptions = {
-        url: 'https://accounts.spotify.com/api/token',
-        headers: { 'Authorization': 'Basic ' + (new Buffer(client_id + ':' + client_secret).toString('base64')) },
-        form: {
-            grant_type: 'refresh_token',
-            refresh_token: refresh_token
-        },
-        json: true
-    };
-
-    request.post(authOptions, function(error, response, body) {
-        if (!error && response.statusCode === 200) {
-            const access_token = body.access_token;
-            res.send({
-                'access_token': access_token
-            });
-        }
-    });
-});
-
-
 app.listen(port);
+console.log("Starting server on port:", port)
