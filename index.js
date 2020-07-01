@@ -10,13 +10,13 @@ app.use(express.static(__dirname + '/public'))
     .use(cookieParser());
 
 const port = process.env.PORT || 8081;
-const redirect_uri = 'http://SpotifyFrontend:8081/callback';
+const redirect_uri = 'http://localhost:8081/callback';
 
 
 app.get('/', function (req, res) {
     const refresh_token = req.cookies['refresh_token'] || null;
     if (!refresh_token) {
-        res.redirect('http://SpotifyFrontend:8081/login');
+        res.redirect('http://localhost:8081/login');
     } else {
         res.sendFile(path.join(__dirname + '/views/' + 'home.html'));
     }
@@ -62,7 +62,7 @@ app.get('/callback', function (req, res) {
 
             const cookieOptions = {expires: new Date(253402300000000)};
             res.cookie('refresh_token', refresh_token, cookieOptions);
-            res.redirect('http://SpotifyFrontend:8081/');
+            res.redirect('http://localhost:8081/');
             console.log('access_token: ' ,access_token, 'refresh_token: ', refresh_token)
         }
     });

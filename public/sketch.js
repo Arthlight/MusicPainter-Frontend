@@ -55,8 +55,8 @@ function WsClient(url) {
         console.log('received a message')
     }
 }
-// TODO: evtl. ws:// removen
-const ws = new WsClient('ws://SpotifyBackend:4000/v1/ws');
+
+const ws = new WsClient('ws://localhost:4000/v1/ws');
 ws.on("isPlaying", (data) => {
     console.log("Data from isPlaying event is: ", data)
     loaded = data["isPlaying"]
