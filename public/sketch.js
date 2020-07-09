@@ -31,7 +31,7 @@ function WsClient(url) {
     };
 
     this.ws.addEventListener('open', () => {
-        console.log("Succesfully connected to Backend!")
+        console.log("Successfully connected to Backend!")
     });
 
     this.ws.addEventListener('message', msg => {
