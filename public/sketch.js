@@ -56,7 +56,7 @@ function WsClient(url) {
     }
 }
 
-const ws = new WsClient('ws://localhost:4000/v1/ws');
+const ws = new WsClient('ws://161.35.173.232:4000/v1/ws');
 ws.on("isPlaying", (data) => {
     console.log("Data from isPlaying event is: ", data)
     loaded = data["isPlaying"]
