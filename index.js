@@ -11,7 +11,6 @@ app.use(express.static(__dirname + '/public'))
 
 const port = process.env.PORT || 8081;
 const redirect_uri = 'http://161.35.173.232:8081/callback';
-console.log(redirect_uri)
 
 app.get('/', function (req, res) {
     const refresh_token = req.cookies['refresh_token'] || null;
